@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje secreto</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding-top: 100px;
+        }
+
+        .contenedor {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        input {
+            padding: 12px;
+            width: 80%;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        #mensaje {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h1>¿Cuál es tu nombre?</h1>
+
+        <input type="text" id="nombre" placeholder="Escribe tu nombre">
+
+        <br>
+
+        <button onclick="mostrarMensaje()">Enviar</button>
+
+        <div id="mensaje"></div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+
+            let nombre = document.getElementById("nombre").value.trim().toLowerCase();
+
+            let nombres = ["sebastian", "ruth", "eliecer"];
+
+            if (nombres.includes(nombre)) {
+                document.getElementById("mensaje").textContent = "ERES CLE FALTON 😭";
+            } else {
+                document.getElementById("mensaje").textContent = "Hola " + nombre + " 😎";
+            }
+        }
+    </script>
+
+</body>
+</html>
